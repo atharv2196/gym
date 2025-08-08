@@ -1,0 +1,288 @@
+/* Import catchy font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Base styles and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+body {
+  line-height: 1.6;
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0dcdc; /* soft cream text color for visibility */
+}
+
+/* Container width */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* Header styles */
+header {
+  background: #660000; /* dark red header */
+  color: #fff;
+  padding: 20px 0;
+}
+
+header .logo {
+  float: left;
+  width: 120px;
+}
+
+header nav {
+  float: right;
+  margin-top: 30px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #f0dcdc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: #ff6666; /* lighter red on hover */
+}
+
+/* Hero Section - perfectly centered content */
+.hero {
+  background: rgba(0,0,0,0.75); /* dark overlay for contrast on background image */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  height: 400px;
+  padding: 0 20px;        /* padding to avoid clipping on narrow screens */
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main heading */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;    /* spacing below heading */
+  font-weight: 700;
+}
+
+/* Subheading paragraph */
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;    /* spacing below paragraph */
+  font-weight: 400;
+}
+
+/* Join Now button with spacing */
+.btn {
+  background: #cc0000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 20px;       /* space above the button */
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #ff3333;
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  padding: 50px 0;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.features-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('images/bg.jpg') no-repeat center center/cover;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.features > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Feature items */
+.feature-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.gym-gallery {
+  padding: 50px 0;
+  color: #f0dcdc;
+  text-align: center;
+}
+
+.gym-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #ffffff; /* Accent red for headings */
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(204, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(255, 51, 51, 0.7);
+}
+.trainers {
+  padding: 50px 0;
+  color: #f0dcdc;
+  text-align: center;
+}
+
+.trainers h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #f7f7f7;
+  font-weight: 700;
+}
+
+.trainer-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.trainer-card {
+  background: rgba(77, 0, 0, 0.75);
+  border: 1px solid #660000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(204, 0, 0, 0.5);
+  color: #eecaca;
+}
+
+.trainer-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.trainer-card h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.trainer-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trainer-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .trainer-card {
+    width: 90%;
+  }
+}
+
+.feature-item {
+  background: rgba(77, 0, 0, 0.75); /* semi-transparent dark red */
+  border: 1px solid #660000;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+  border-radius: 8px;
+  color: #ffb3b3;
+}
+
+.feature-item h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  background: #660000;
+  color: #f0dcdc;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-items {
+    flex-direction: column;
+    width: 100%;
+  }
+  .feature-item {
+    width: 80%;
+    margin: 10px auto;
+  }
+  header nav {
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+  header .logo {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
